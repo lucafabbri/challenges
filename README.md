@@ -91,6 +91,7 @@ npm install -g @angular/cli
 
 Run the client
 ```
+cd ExerciseSalesClient
 ng serve
 ```
 
