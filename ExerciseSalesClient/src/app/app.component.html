@@ -1,0 +1,67 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="container">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+  <div class="row">
+    <div class="col">
+      <label>name:
+        <input class="form-control" [(ngModel)]="item.name"/>
+      </label>
+    </div>
+    <div class="col">
+      <label>imported:
+        <input type="checkbox" class="form-control" [(ngModel)]="item.isImported">
+      </label>
+    </div>
+    <div class="col">
+      <label>category:
+        <select class="form-control" [(ngModel)]="item.category">
+            <option value="0">book</option>
+            <option value="1">food</option>
+            <option value="2">medical</option>
+            <option value="3">music</option>
+            <option value="4">personalcare</option>
+            <option value="5">generic</option>
+        </select>
+      </label>
+    </div>
+    <div class="col">
+      <label>price:
+        <input type="number" class="form-control" [(ngModel)]="item.unitPrice">
+      </label>
+    </div>
+    <div class="col">
+      <label>qty:
+        <input type="number" class="form-control" [(ngModel)]="item.quantity">
+      </label>
+    </div>
+  </div>
+  <div class="row mb-3">
+    <div class="col">
+      <button class="btn btn-secondary" (click)="addItem()">Add item to order</button>
+    </div>
+  </div>
+  <div class="row mb-3">
+    <div class="col">
+        <h2>Order list</h2>
+        <ul *ngIf="items?.length > 0" class="list-group">
+          <li class="list-group-item" *ngFor="let it of items">{{it.quantity}} <span *ngIf="it.isImported">imported</span> {{it.name}} at {{it.unitPrice}}</li>
+        </ul>
+        <div>
+          <button (click)="postItems()" class="btn btn-primary">Post order</button>
+        </div>
+    </div>
+  </div>
+  <div *ngIf="receipt?.items?.length > 0" class="row">
+    <div class="col">
+        <h2>Receipt</h2>
+        <ul class="list-group">
+          <li class="list-group-item" *ngFor="let it of receipt.items">{{it.quantity}} <span *ngIf="it.isImported">imported</span> {{it.name}} at {{it.unitPrice}}</li>
+          <li>Sales Taxes: {{receipt.salesTaxes}}</li>
+          <li>Total {{receipt.grandTotal}}</li>
+        </ul>
+    </div>
+  </div>
+</div>
+
