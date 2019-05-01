@@ -14,14 +14,14 @@ namespace AWSServerless1.DataTransferObjects
         {
             get
             {
-                return Items.Sum(i => i.Total);
+                return Math.Round(Items.Sum(i => i.Total),2);
             }
         }
         public double SalesTaxes
         { 
             get
             {
-                return Items.Sum(i => i.SalesTax);
+                return Math.Round(Items.Sum(i => i.SalesTax),2);
             }
         }
 

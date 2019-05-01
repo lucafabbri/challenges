@@ -12,7 +12,7 @@ export class ItemService {
   ) {}
 
   postOrder(items: Item[]) {
-    return this.http.post(`https://xgbtd6ys0b.execute-api.eu-west-1.amazonaws.com/Prod/api/calculatesalestaxes`,items);
+    return this.http.post(`https://xgbtd6ys0b.execute-api.eu-west-1.amazonaws.com/Prod/api/calculatesalestaxes`,{"items":items});
   }
 
 }

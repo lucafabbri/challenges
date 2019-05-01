@@ -57,9 +57,9 @@
     <div class="col">
         <h2>Receipt</h2>
         <ul class="list-group">
-          <li class="list-group-item" *ngFor="let it of receipt.items">{{it.quantity}} <span *ngIf="it.isImported">imported</span> {{it.name}} at {{it.unitPrice}}</li>
-          <li>Sales Taxes: {{receipt.salesTaxes}}</li>
-          <li>Total {{receipt.grandTotal}}</li>
+          <li class="list-group-item" *ngFor="let it of receipt.items">{{it.quantity}} <span *ngIf="it.isImported">imported</span> {{it.name}} at {{it.total}}</li>
+          <li class="list-group-item">Sales Taxes: {{receipt.salesTaxes}}</li>
+          <li class="list-group-item">Total {{receipt.grandTotal}}</li>
         </ul>
     </div>
   </div>
