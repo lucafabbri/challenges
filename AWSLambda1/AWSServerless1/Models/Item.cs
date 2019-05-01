@@ -13,8 +13,7 @@ namespace AWSServerless1.Models
         public ItemCategory Category { get; set; }
         public double UnitPrice { get; set; }
         public int Quantity { get; set; }
-        public double Total { get { return _netTotal + SalesTax; } }
-
+        public double Total { get { return Math.Round(_netTotal + SalesTax,2); } }
         public double SalesTax { get { return CalculateSalesTaxes(); } }
         double CalculateSalesTaxes()
         {
