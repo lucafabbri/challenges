@@ -35,7 +35,6 @@ export class AppComponent {
       total: 0,
       salesTax: 0,
     });
-    console.log(this.items)
     this.item = {
       name:"",
       isImported:false,
@@ -45,6 +44,5 @@ export class AppComponent {
       total: 0,
       salesTax: 0,
     };
-    console.log(this.items)
   }
 }
